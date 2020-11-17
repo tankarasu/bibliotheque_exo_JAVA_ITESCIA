@@ -59,11 +59,21 @@ public class UserInterface {
     }
 
     public void addSomeBook() {
+        String bookType = "";
+        do {
+            System.out.println("What's the type of " +
+                    "Book?\n-Thriller\n-Cartoon\n-Roman");
+            bookType = userInput.next();
+
+        } while (!bookType.equalsIgnoreCase("Thriller") & !bookType.equalsIgnoreCase("Roman") & !bookType.equalsIgnoreCase("Cartoon"));
+
         System.out.println("What's the title?");
         String bookTitle = userInput.next();
         System.out.println("Who's the Author?");
         String bookAuthor = userInput.next();
-        myLibrary.addBook(bookTitle, bookAuthor);
+
+
+        myLibrary.addBook(bookTitle, bookAuthor, "test");
         System.out.println(" type q for quit or anything else to add a new " +
                 "one");
         String choice = userInput.next();

@@ -7,14 +7,12 @@ public class Book {
     private String m_sTitle;
     private String m_sAuthor;
     private String m_sIndex;
+    private String m_sType;
     // -------------------------------------------------
     //constructor
     // -------------------------------------------------
 
     public Book(String title, String author, String Index) {
-        m_sIndex = Index; // todo pass generateIndex return Value
-        m_sAuthor = author;
-        m_sTitle = title;
     }
 
     // -------------------------------------------------
@@ -29,10 +27,18 @@ public class Book {
         return m_sTitle;
     }
 
+    public String getType() {
+        return m_sType;
+    }
+
     // -------------------------------------------------
     // setters
     // -------------------------------------------------
 
+
+    public void setTitle(String m_sTitle) {
+        this.m_sTitle = m_sTitle;
+    }
 
     public void setBookIndex(String p_Index) {
         m_sIndex = p_Index;
@@ -42,4 +48,7 @@ public class Book {
         m_sAuthor = p_sAuthor;
     }
 
+    public void setType(String m_sType) {
+        this.m_sType = m_sType;
+    }
 }
