@@ -1,0 +1,47 @@
+@startuml
+
+class Book{
+- String : m_sTitle
+- String : m_sAuthor
+- String : m_sIndex
+==
++ generateIndex()
++ getBookIndex()
++ getBookTitle()
++ getBookAuthor()
+--
++ setBookAuthor()
++ setBookIndex()
++ setBookTitle()
+}
+
+Book "0..*" --* "1 " Library
+
+class Library{
+- ArrayList <Book> m_aBookListArray
+==
++ getAllBooks();
++ addBook();
++ getBookStartWith(String : "A")
++ getAllOddIndexedBook();
+- isIndexAvailable();
+--
++ getBookListArray();
+--
++ setBookListArray();
+}
+
+class UserInterface{
++ addSomeBook();
++ askOddIndexedBook();
++ askTitleStartWithLetter(String :query);
++ askAllBooks();
+}
+
+class Main{
+
+}
+
+UserInterface  - Library
+UserInterface -- Main
+@enduml
