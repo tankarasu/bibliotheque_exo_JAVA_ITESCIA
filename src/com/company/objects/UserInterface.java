@@ -1,5 +1,7 @@
 package com.company.objects;
 
+import com.company.BookTypeEnum;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -12,7 +14,6 @@ public class UserInterface {
     static Scanner userInput = new Scanner(System.in);
     Library myLibrary = new Library();
     ArrayList<Book> bookList = myLibrary.getBookListArray();
-    String[] typeList = {"ROMAN", "THRILLER", "CARTOON"};
 
     // ------------------------------------------------- 
     // méthodes
@@ -28,7 +29,7 @@ public class UserInterface {
         String regex = "^[ ]?[123456]?[ ]?$";
         Pattern pattern = Pattern.compile(regex);
 
-        boolean result = false;
+        boolean result;
         do {
             System.out.println("Make a choice : ");
             System.out.println("1-Add one or some books");
@@ -66,7 +67,7 @@ public class UserInterface {
     }
 
     public void addSomeBook() {
-        String bookType = "";
+        String bookType;
         do {
             System.out.println("What's the type of " +
                     "Book?\n-Thriller\n-Cartoon\n-Roman");
@@ -111,14 +112,14 @@ public class UserInterface {
     public void getStatistic() {
         System.out.println("Statistic according to th type of book present in" +
                 " the Library");
-        for (String type : typeList) {
-            System.out.println(type+": "+rateOccurency(type)+" %");
+        for (BookTypeEnum type : BookTypeEnum.values()) {
+            System.out.println(type + ": " + rateOccurence(type.toString()) + " %");
         }
         System.out.println(); // espacement
         chooseOption();
     }
 
-    public float rateOccurency(String query) {
+    private float rateOccurence(String query) {
         int frequency = 0;
         for (Book book : bookList) {
             if (book.getType().equalsIgnoreCase(query)) {
@@ -129,13 +130,5 @@ public class UserInterface {
         result = (float) Math.ceil(result * 100);
         return result / 100;
     }
-    // -------------------------------------------------
-    // getters
-    // -------------------------------------------------
-
-    // -------------------------------------------------
-    // setters
-    // -------------------------------------------------
-
 
 }

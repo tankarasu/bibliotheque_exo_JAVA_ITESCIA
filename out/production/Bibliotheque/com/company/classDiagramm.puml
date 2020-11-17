@@ -4,15 +4,18 @@ class Book{
 - String : m_sTitle
 - String : m_sAuthor
 - String : m_sIndex
+- String : m_sType
+--
+constructor()
 ==
-+ generateIndex()
 + getBookIndex()
 + getBookTitle()
-+ getBookAuthor()
++ getBookType()
 --
 + setBookAuthor()
 + setBookIndex()
 + setBookTitle()
++ setBookType()
 }
 
 Book "0..*" --* "1 " Library
@@ -38,10 +41,17 @@ class UserInterface{
 + askAllBooks();
 }
 
-class Roman extends Book{}
-class Thriller {}
-Thriller --> Book
-class Cartoon{}
+class Roman extends Book{
+constructor()
+}
+
+class Thriller extends Book {
+constructor()
+}
+
+class Cartoon extends Book{
+constructor()
+}
 
 class Main{
 

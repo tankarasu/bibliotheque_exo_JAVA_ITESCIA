@@ -1,17 +1,22 @@
 package com.company.objects;
 
 public class Book {
+
     // -------------------------------------------------
     // variables membres
     // -------------------------------------------------
+
     private String m_sTitle;
+    @SuppressWarnings("UnusedDeclaration")
     private String m_sAuthor;
     private String m_sIndex;
     private String m_sType;
+
     // -------------------------------------------------
     //constructor
     // -------------------------------------------------
 
+    @SuppressWarnings("unused")
     public Book(String title, String author, String Index) {
     }
 
@@ -36,7 +41,7 @@ public class Book {
     // -------------------------------------------------
 
 
-    public void setTitle(String m_sTitle) {
+    public void setBookTitle(String m_sTitle) {
         this.m_sTitle = m_sTitle;
     }
 
@@ -48,7 +53,7 @@ public class Book {
         m_sAuthor = p_sAuthor;
     }
 
-    public void setType(String m_sType) {
+    public void setBookType(String m_sType) {
         this.m_sType = m_sType;
     }
 }

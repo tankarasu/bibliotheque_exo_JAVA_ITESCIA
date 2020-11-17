@@ -10,7 +10,7 @@ public class Library {
     // -------------------------------------------------
     // variables membres
     // -------------------------------------------------
-    private ArrayList<Book> m_aBookListArray = new ArrayList();
+    private final ArrayList<Book> m_aBookListArray = new ArrayList();
 
     // -------------------------------------------------
     //constructor
@@ -31,14 +31,13 @@ public class Library {
     // -------------------------------------------------
     // méthodes
     // -------------------------------------------------
-
     public String getAllBooks() {
 
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (Book book : m_aBookListArray) {
-            result += book.getBookTitle() + "\n";
+            result.append(book.getBookTitle()).append("\n");
         }
-        return result;
+        return result.toString();
     }
 
     public void addBook(String title, String author, String bookType) {
@@ -60,25 +59,25 @@ public class Library {
     }
 
     public String getBookStartWith() {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (Book book : m_aBookListArray) {
             String bookTitle = book.getBookTitle();
             if (bookTitle.substring(0, 1).equalsIgnoreCase("L")) {
-                result += book.getBookTitle() + "\n";
+                result.append(book.getBookTitle()).append("\n");
             }
         }
-        return result;
+        return result.toString();
     }
 
     public String getAllOddIndexedBook() {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (Book book : m_aBookListArray) {
             if ((Integer.parseInt(book.getBookIndex()) % 2) == 1) {
-                result += book.getBookTitle() + "\n";
+                result.append(book.getBookTitle()).append("\n");
             }
         }
 
-        return result;
+        return result.toString();
     }
 
     // -------------------------------------------------

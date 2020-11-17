@@ -3,10 +3,6 @@ package com.company.objects.type;
 import com.company.objects.Book;
 
 public class Cartoon extends Book {
-    // -------------------------------------------------
-    // variables membres
-    // -------------------------------------------------
-
 
     // -------------------------------------------------
     //constructor
@@ -14,23 +10,10 @@ public class Cartoon extends Book {
 
     public Cartoon(String title, String author, String index) {
         super(title, author, index);
-        setTitle(title);
+        setBookTitle(title);
         setBookAuthor(author);
         setBookIndex(index);
-        setType("Cartoon");
+        setBookType("Cartoon");
     }
-
-    // -------------------------------------------------
-    // méthodes
-    // -------------------------------------------------
-
-    // -------------------------------------------------
-    // getters
-    // -------------------------------------------------
-
-    // -------------------------------------------------
-    // setters
-    // -------------------------------------------------
-
 
 }
