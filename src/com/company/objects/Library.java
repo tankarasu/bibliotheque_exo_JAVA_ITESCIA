@@ -44,14 +44,15 @@ public class Library {
     public void addBook(String title, String author, String bookType) {
         String index = String.valueOf(getBookListArray().size() + 1);
         Book newBook = new Book("", "", "");
+        bookType = bookType.toUpperCase();
         switch (bookType) {
-            case "Thriller":
+            case "THRILLER":
                 newBook = new Thriller(title, author, index);
                 break;
-            case "Roman":
+            case "ROMAN":
                 newBook = new Roman(title, author, index);
                 break;
-            case "Cartoon":
+            case "CARTOON":
                 newBook = new Cartoon(title, author, index);
                 break;
         }
@@ -62,7 +63,7 @@ public class Library {
         String result = "";
         for (Book book : m_aBookListArray) {
             String bookTitle = book.getBookTitle();
-            if (bookTitle.substring(0, 1).equalsIgnoreCase("A")) {
+            if (bookTitle.substring(0, 1).equalsIgnoreCase("L")) {
                 result += book.getBookTitle() + "\n";
             }
         }

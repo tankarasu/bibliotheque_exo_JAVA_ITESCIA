@@ -38,6 +38,11 @@ class UserInterface{
 + askAllBooks();
 }
 
+class Roman extends Book{}
+class Thriller {}
+Thriller --> Book
+class Cartoon{}
+
 class Main{
 
 }
