@@ -22,23 +22,32 @@ Book "0..*" --* "1 " Library
 
 class Library{
 - ArrayList <Book> m_aBookListArray
+--
+constructor()
 ==
 + getAllBooks();
 + addBook();
 + getBookStartWith(String : "A")
 + getAllOddIndexedBook();
-- isIndexAvailable();
 --
 + getBookListArray();
 --
-+ setBookListArray();
++ addBookListArray();
 }
 
 class UserInterface{
+Scanner userInput
+Library myLibrary
+bookList
+==
++ launchApplication();
++ chooseOption();
 + addSomeBook();
 + askOddIndexedBook();
 + askTitleStartWithLetter(String :query);
 + askAllBooks();
++ getStatistic();
+- rateOccurence();
 }
 
 class Roman extends Book{
@@ -58,5 +67,5 @@ class Main{
 }
 
 UserInterface  - Library
-UserInterface -- Main
+UserInterface -- Main :  launchApplication()
 @enduml
