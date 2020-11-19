@@ -6,18 +6,22 @@ public class Book {
     // variables membres
     // -------------------------------------------------
 
-    private String m_sTitle;
-    @SuppressWarnings("UnusedDeclaration")
-    private String m_sAuthor;
-    private String m_sIndex;
-    private String m_sType;
+    private final String m_sTitle;
+    private final String m_sIndex;
+    private final String m_sType;
 
     // -------------------------------------------------
     //constructor
     // -------------------------------------------------
 
     @SuppressWarnings("unused")
-    public Book(String title, String author, String Index) {
+    public Book(String bookTitle, String bookAuthor, String bookType,
+                String bookIndex, String bookYear, String bookEdition,
+                String bookLanguage) {
+        m_sTitle = bookTitle;
+        m_sIndex = bookIndex;
+        m_sType = bookType;
+
     }
 
     // -------------------------------------------------
@@ -36,24 +40,4 @@ public class Book {
         return m_sType;
     }
 
-    // -------------------------------------------------
-    // setters
-    // -------------------------------------------------
-
-
-    public void setBookTitle(String m_sTitle) {
-        this.m_sTitle = m_sTitle;
-    }
-
-    public void setBookIndex(String p_Index) {
-        m_sIndex = p_Index;
-    }
-
-    public void setBookAuthor(String p_sAuthor) {
-        m_sAuthor = p_sAuthor;
-    }
-
-    public void setBookType(String m_sType) {
-        this.m_sType = m_sType;
-    }
 }
